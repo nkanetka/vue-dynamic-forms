@@ -29,7 +29,7 @@ export function useInputEvents(props, emit): InputEventsComposition {
     const element = $event.target as HTMLInputElement;
 
     $event.stopImmediatePropagation();
-    if (props.control && hasValue(element.value)) {
+    if (props.control) {
       if (
         (!props.control.valid &&
           props.control.validationTrigger.type ===
