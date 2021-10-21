@@ -17,7 +17,6 @@
     "test:e2e:ci": "cypress run",
     "lint": "lint",
     "build:dts": "api-extractor run --local --verbose && tail -n +7 >> dist/as-dynamic-forms.d.ts",
-    "postinstall": "is-ci || husky install",
     "postpublish": "pinst --enable",
     "prepublishOnly": "tsc --project tsconfig.json --noEmit && yarn build && pinst --disable",
     "semantic-release": "semantic-release",
