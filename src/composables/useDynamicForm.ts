@@ -178,14 +178,12 @@ export function useDynamicForm(
   const debounceEmitChanges = useDebounceFn(emitChanges, 300)
 
   function valueChange(event: InputEvent) {
-    if (hasValue(event.value)) {
-      const updatedCtrl = findControlByName(event.name)
-      if (updatedCtrl) {
-        updatedCtrl.value = event.value as string
-        updatedCtrl.dirty = true
-      }
-      debounceEmitChanges(formValues.value)
+    const updatedCtrl = findControlByName(event.name)
+    if (updatedCtrl) {
+      updatedCtrl.value = event.value as string
+      updatedCtrl.dirty = true
     }
+    debounceEmitChanges(formValues.value)
   }
 
   function onBlur({ name }: InputEvent) {
