@@ -91,7 +91,7 @@ export function useInputEvents(props, emit): InputEventsComposition {
   watch(
     () => props?.control?.value,
     (curr, prev) => {
-      if (hasValue(curr) && curr !== prev) {
+      if (curr !== prev) {
         emit('change', {
           name: props.control.name,
           value: props.control.value,
