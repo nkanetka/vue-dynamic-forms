@@ -172,6 +172,7 @@ export function useDynamicForm(
   }
 
   function emitChanges(changes: FormChanges) {
+    console.log('emitting change');
     ctx.emit('change', changes)
   }
 
