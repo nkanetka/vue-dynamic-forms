@@ -30,6 +30,8 @@ export function useInputEvents(props, emit): InputEventsComposition {
 
     $event.stopImmediatePropagation();
     if (props.control) {
+      console.log(props.control);
+      console.log(props.control.validationTrigger);
       if (
         (!props.control.valid &&
           props.control.validationTrigger.type ===
@@ -38,6 +40,7 @@ export function useInputEvents(props, emit): InputEventsComposition {
           ValidationTriggerTypes.CHANGE &&
           element.value.length >= props.control.validationTrigger.threshold)
       ) {
+        console.log('validating');
         validate();
       }
       emit('change', {
